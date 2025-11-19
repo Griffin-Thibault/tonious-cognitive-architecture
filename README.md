@@ -129,7 +129,7 @@ These examples are meant to make the abstract architecture concrete without expo
 ## 📄 License
 ## License
 
-This project is distributed under the **CC-BY 4.0 license**.  
+This project is distributed under the **CC-BY-NC 4.0 license**.  
 See the full license text in the [`LICENSE`](LICENSE) file.
 
 
