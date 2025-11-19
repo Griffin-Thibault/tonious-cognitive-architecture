@@ -141,7 +141,6 @@ You can reach the creator here:
 
 - **Reddit:** `GriffinThibault`  
 - **GitHub:** `Griffin-Thibault`  
-- **Email:** `griffin.thibault@gmail.com`  
 
 ---
 
