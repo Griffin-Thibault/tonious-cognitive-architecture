@@ -193,9 +193,9 @@ The core intellectual value lies in the architecture itself.
 
 For discussions, collaboration, or academic/commercial inquiries:
 
-- **Creator:** *[your name here]*  
-- **Email:** *[your placeholder email]*  
-- **GitHub:** *[your GitHub username]*
+- **Creator:** *Shaiyaoh*  
+- **Email:** *griffin.thibault@gmail.com*  
+- **GitHub:** *Griffin-Thibault*
 
 Feel free to open Issues or Discussions.
 
