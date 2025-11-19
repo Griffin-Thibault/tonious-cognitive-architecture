@@ -127,8 +127,11 @@ These examples are meant to make the abstract architecture concrete without expo
 ---
 
 ## 📄 License
+## License
 
-This project is released under the **MIT License**. See the `LICENSE` file for details.
+This project is distributed under the **CC-BY 4.0 license**.  
+See the full license text in the [`LICENSE`](LICENSE) file.
+
 
 ---
 
