@@ -11,7 +11,7 @@ What I *am* is someone who saw a missing idea —
 a way to bind **video perception**, **memory**, and **symbolic structure** into a single cognitive interface —  
 and decided to build it from first principles.
 
-I dropped out of engineering school and am pursueing this.  
+I am an engineering physics dropout.  
 Everything in this repo comes from pure intuition, experimentation, and thousands of hours of prompting, architecting, refining, and breaking things until they worked.
 
 I didn’t train a model.  
