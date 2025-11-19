@@ -1,1 +1,22 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor junk
+.vscode/
+.idea/
+
+# Logs & temp
+*.log
+*.tmp
+
+# Image/media (repo is text-only)
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+
+# Environment files
+.env
 
