@@ -38,3 +38,8 @@ It was built the only way I knew how:
 
 Thanks for reading,  
 — **S.**
+
+You can reach the creator here:
+
+    Reddit: GriffinThibault
+    GitHub: Griffin-Thibault
