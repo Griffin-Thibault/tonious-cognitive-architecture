@@ -1,43 +1,51 @@
-Figure 3 shows how Tonious stores long-term memories in the Tree-of-Life (TOL) layer and later uses those memories during Recall mode. Text chats and video reflections are written into symbolic memory files and JSONL streams. When the user asks for a recap, only the relevant recent messages are pulled, formatted, and summarized by the LLM in a grounded style.
+# Diagram 3 — Memory and Recall Flow
 
 ```mermaid
 flowchart TD
 
-    %% Conversation and Video Capture
-    U[User Messages\n(General or Video)]
-    VTM[Video Trinity Moments\n(Scene, Voice, Env)]
+%% ======================
+%% Conversation Capture
+%% ======================
+U[User Messages General Mode]
+VTM[Video Trinity Moments Scene Voice Env]
 
-    %% Logging Layer
-    subgraph Logging_Layer
-        CM[chat_messages table\n(user and Tonious turns)]
-        TL[Text Logs\n(JSONL)]
-        VM[Video Memory Files\n(Markdown summaries)]
-        TS[TOL Streams\n(symbolic triplets)]
-    end
+%% ======================
+%% Logging Layer
+%% ======================
+subgraph Logging Layer
+    CM[Chat Messages Table]
+    TL[Text Logs JSONL]
+    VM[Video Memory Files Markdown]
+    TS[TOL Streams Symbolic Triplets]
+end
 
-    %% Recall Request
-    subgraph Recall_Request
-        RQ[User request:\n"Summarize what we have talked about"]
-        RC[Recent Context Fetcher\n(last N messages)]
-        RP[Recall Prompt Builder\n(conversation log block)]
-    end
+%% ======================
+%% Recall Request
+%% ======================
+subgraph Recall Request
+    RQ[User Ask Recall]
+    RC[Recent Context Fetch Last Messages]
+    RP[Recall Prompt Builder]
+end
 
-    %% LLM Recall Engine
-    subgraph LLM_Recall
-        RL[LLM in Recall Mode\n(grounded style only)]
-        RS[Recall Summary\n(bullets or short paragraph)]
-    end
+%% ======================
+%% LLM Recall Engine
+%% ======================
+subgraph LLM Recall Mode
+    RL[LLM Recall Processing Grounded]
+    RS[Recall Summary Output]
+end
 
-    %% Write path
-    U --> CM
-    VTM --> VM
-    CM --> TL
-    VM --> TS
-    TL --> TS
+%% Write path
+U --> CM
+VTM --> VM
+CM --> TL
+TL --> TS
+VM --> TS
 
-    %% Recall path
-    RQ --> RC --> RP --> RL --> RS
+%% Recall path
+RQ --> RC --> RP --> RL --> RS
 
-    %% Context sources for recall
-    RC --> TL
-    RC --> TS
+%% Context for recall comes from logs
+RC --> TL
+RC --> TS
