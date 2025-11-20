@@ -3,27 +3,39 @@ Figure 3 shows how Tonious stores long-term memories in the Tree-of-Life (TOL) l
 ```mermaid
 flowchart TD
 
-    subgraph A[Conversation & Video Capture]
-        U[User Messages<br/>(General / Video)]
-        V[Video Trinity Moments<br/>(Scene / Voice / Env)]
+    %% =============================
+    %% Conversation & Video Capture
+    %% =============================
+    subgraph A[Conversation and Video Capture]
+        U[User Messages (General or Video)]
+        V[Video Trinity Moments (Scene, Voice, Env)]
     end
 
+    %% =============================
+    %% Logging Layer
+    %% =============================
     subgraph B[Logging Layer]
-        CM[chat_messages Table<br/>(User & Tonious turns)]
-        TL[Text Logs<br/>(JSONL Streams)]
-        VM[Video Memories<br/>(Markdown Summaries)]
-        TS[TOL Streams<br/>(Symbolic Triplets)]
+        CM[chat_messages Table]
+        TL[Text Logs (JSONL)]
+        VM[Video Memory Files (Markdown)]
+        TS[TOL Streams (Symbolic Triplets)]
     end
 
+    %% =============================
+    %% Recall Process
+    %% =============================
     subgraph C[Recall Request]
-        RQ[User: 'Summarize what we have talked about']
-        RC[Recent Context Fetch<br/>(Last N Messages)]
-        RP[Recall Prompt Builder<br/>(Conversation Log Block)]
+        RQ[User asks for a summary]
+        RC[Fetch Recent Context (Last N messages)]
+        RP[Build Recall Prompt (Conversation Log)]
     end
 
+    %% =============================
+    %% LLM Recall Engine
+    %% =============================
     subgraph D[LLM Recall Engine]
-        RL[LLM (Recall Mode)<br/>(Grounded Style Only)]
-        RS[Recall Summary<br/>(Bullets or Short Paragraph)]
+        RL[LLM in Recall Mode (Grounded Only)]
+        RS[Generated Summary (Bullets or Paragraph)]
     end
 
     %% Flows from interaction to memory
@@ -33,12 +45,11 @@ flowchart TD
     V --> TS
 
     %% Recall pipeline
-    RQ --> CM
     RQ --> RC
     RC --> RP
     RP --> RL
     RL --> RS
 
-    %% Memory feedback
+    %% Summary is written back to memory
     RS --> TL
     RS --> TS
