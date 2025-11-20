@@ -1,5 +1,13 @@
 # Diagram 3 — Memory and Recall Flow
 
+Figure 3 — Memory and Recall Flow.  
+This diagram illustrates how Tonious stores long-term information in the Tree-of-Life (TOL) layer and later retrieves it during Recall mode.  
+User text messages and Trinity-derived video moments are written into structured logs, markdown memories, and symbolic TOL triplets.  
+When a Recall request is made, Tonious does not search the entire history.  
+Instead, it retrieves only the most recent context window, pulls relevant log segments, and builds a compact recall prompt.  
+The LLM then produces a grounded summary, relying on both the recent chat and any linked TOL streams.
+
+
 ```mermaid
 flowchart TD
 
